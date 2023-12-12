@@ -40,33 +40,38 @@ add_action(
 		if ( ! function_exists( 'acf_add_local_field_group' ) ) {
 			return;
 		}
-		$instructions = <<<EOS
-			<p>Implemented properly, this plugin will augment the Admin Menu Editor plugin by allowing you to hide or display large chunks of the admin menu. This is done by adding section headers (menu items) and using CSS classes to indicate your groups. </p>
-			<ol>
-				<li><p>Set your class names below.</p>
-				<p>You are defining the <em>stem</em>. When you add the class to the menu items, you should use a prefix for the menu group.</p>
-				
-				<p>Example: Suppose you are creating a group for content type items (and you're using the default class stems). You could use "content-menu-section-header" for the section header class name and "content-menu-section-item" for the items you want to hide.</p></li>
-				<ul>
-					<li>Header class stem - The class name stem for the section headers. These items will be the buttons that hide or show the rest of the group.</li>
-					<li>Item class stem - The class name stem for the menu items. These items will be hidden on page load.</li>
-				</ul>
-				<li>Using the Admin Menu Editor plugin, put the menu items in the order you want. Don't forget to set the classname.</li>
-				<li>Add menu items to indicate the start of a section. Set the target pages to "none". Again, don't forget to set the class name.</li>
-				<li>Assuming you clicked "Save Changes" everything should be configured.</li>
+		$instructions = <<<HTML
+		<p>This plugin was built to augment the Admin Menu Editor plugin. AME lets you reorganize your admin menu. This plugin lets you create collapsible sections.</p>
+		<p>Everything is automatic. These settings are only for changing the section header colors.</p>
 
-			</ol>
-			<p><strong>Note: The class setting is hidden by default. I recommend going into the settings and unchecking "Hide advanced menu options by default".</strong></p>
-			<strong>Colors</strong>
+		<H3>1. Pick your class names.</H3>
+		<p>This system uses class names to understand what is in what group and differentiate between headers and regular items.</p>
+		<ol>
+			<li>Pick a short CSS class name. (If you don't know CSS rules for this, pick 1 word and make it lowercase.)<br>
+			Example: content</li>
+			<li>For the header, append "-section-header" to the end.<br />
+			Example: content-section-header</li>
+			<li>For the items, append "-section-item" to the end.<br />
+			Example: content-section-item</li>
+			<li>Repeat the process for each collapsable group you want.</li>
+		</ol>
+		
+		<H3>2. In AME, create section headings</H3>
+		<ol>
+			<li>Create a new menu item.</li>
+			<li>Set the target page to "none".</li>
+			<li>Set the class name.<br />
+			The class field is in the advanced options. They're hidden by default. I recommend going into the AME settings and unchecking “Hide advanced menu options by default”.</li>
+			<li>Repeat for each section.</li>
+			<li>Click "save changes" when you're done.</li>
+		</ol>
 
-			<ul>
-				<li><strong>Header background color</strong> - The background color of the header.</li>
-				<li><strong>Header text color</strong> - The text color of the header.</li>
-				<li><strong>Active header background color</strong> - The background color of the active header.</li>
-				<li><strong>Active header text color</strong> - The text color of the active header.</li>
-			</ul>
+		<H3>3. In AME, rearrange the menu items into the order you want. Set the class name. Click "Save changes".</H3>
+		<p>Remember:<br />
+		The menu item with the class ending in "-header" becomes the toggle button.<br />
+		The menu item with the class ending in "-item" will be hidden until the section heading is clicked.</p>
 
-		EOS;
+		HTML;
 
 		acf_add_local_field_group(
 			array(
@@ -178,64 +183,6 @@ add_action(
 								'default_value'     => '#FFFFFF',
 								'enable_opacity'    => 0,
 								'return_format'     => 'string',
-							),
-						),
-					),
-					array(
-						'key'               => 'field_65777e66820f1',
-						'label'             => 'Class names',
-						'name'              => 'class_names',
-						'aria-label'        => '',
-						'type'              => 'group',
-						'instructions'      => '',
-						'required'          => 0,
-						'conditional_logic' => 0,
-						'wrapper'           => array(
-							'width' => '',
-							'class' => 'jwr-admin-menu-settings__classes',
-							'id'    => '',
-						),
-						'layout'            => 'block',
-						'sub_fields'        => array(
-							array(
-								'key'               => 'field_65777e81820f2',
-								'label'             => 'Header class stem',
-								'name'              => 'header_class_stem',
-								'aria-label'        => '',
-								'type'              => 'text',
-								'instructions'      => '',
-								'required'          => 0,
-								'conditional_logic' => 0,
-								'wrapper'           => array(
-									'width' => '',
-									'class' => 'jwr-admin-menu-settings__class',
-									'id'    => '',
-								),
-								'default_value'     => '-menu-section-header',
-								'maxlength'         => '',
-								'placeholder'       => '',
-								'prepend'           => '',
-								'append'            => '',
-							),
-							array(
-								'key'               => 'field_65777eb8820f3',
-								'label'             => 'Item class stem',
-								'name'              => 'item_class_stem',
-								'aria-label'        => '',
-								'type'              => 'text',
-								'instructions'      => '',
-								'required'          => 0,
-								'conditional_logic' => 0,
-								'wrapper'           => array(
-									'width' => '',
-									'class' => 'jwr-admin-menu-settings__class',
-									'id'    => '',
-								),
-								'default_value'     => '-menu-section-item',
-								'maxlength'         => '',
-								'placeholder'       => '',
-								'prepend'           => '',
-								'append'            => '',
 							),
 						),
 					),
