@@ -7,7 +7,7 @@
  * @package JWR_Admin_Menu_Styler
  */
 
-namespace JWR\Admin_Menu_Styler\Activation;
+namespace JWR\Admin_Menu_Styler\PHP;
 
 defined( 'ABSPATH' ) || exit;
 
