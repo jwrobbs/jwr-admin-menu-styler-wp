@@ -39,5 +39,11 @@ function enqueue_admin_scripts() {
 		array(),
 		filemtime( plugin_dir_path( __FILE__ ) . 'css/options-page-styles.css' )
 	);
+	\wp_enqueue_style(
+		'jwr-admin-menu-styler',
+		plugin_dir_url( __FILE__ ) . 'css/menu-styles.css',
+		array(),
+		filemtime( plugin_dir_path( __FILE__ ) . 'css/menu-styles.css' )
+	);
 }
 \add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_admin_scripts' );
