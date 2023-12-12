@@ -16,13 +16,6 @@ namespace JWR\Admin_Menu_Styler;
 
 defined( 'ABSPATH' ) || exit;
 
-/*
-	[x] Verify ACF and AME installed and active
-	[x] create options page
-	[] Add css to style output
-	[] Add js to toggle sections
-*/
-
 require_once 'php/activation.php';
 require_once 'php/options.php';
 require_once 'php/menu-styles.php';
@@ -39,6 +32,14 @@ function enqueue_admin_scripts() {
 		plugin_dir_url( __FILE__ ) . 'css/options-page-styles.css',
 		array(),
 		filemtime( plugin_dir_path( __FILE__ ) . 'css/options-page-styles.css' )
+	);
+
+	\wp_enqueue_script(
+		'jwr-admin-menu-toggle',
+		plugin_dir_url( __FILE__ ) . 'js/admin-menu.js',
+		array( 'jquery' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'js/admin-menu.js' ),
+		true
 	);
 }
 \add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_admin_scripts' );
