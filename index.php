@@ -25,6 +25,7 @@ defined( 'ABSPATH' ) || exit;
 
 require_once 'php/activation.php';
 require_once 'php/options.php';
+require_once 'php/menu-styles.php';
 
 
 /**
@@ -38,12 +39,6 @@ function enqueue_admin_scripts() {
 		plugin_dir_url( __FILE__ ) . 'css/options-page-styles.css',
 		array(),
 		filemtime( plugin_dir_path( __FILE__ ) . 'css/options-page-styles.css' )
-	);
-	\wp_enqueue_style(
-		'jwr-admin-menu-styler',
-		plugin_dir_url( __FILE__ ) . 'css/menu-styles.css',
-		array(),
-		filemtime( plugin_dir_path( __FILE__ ) . 'css/menu-styles.css' )
 	);
 }
 \add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_admin_scripts' );
