@@ -56,6 +56,7 @@ add_action(
 				<li>Assuming you clicked "Save Changes" everything should be configured.</li>
 
 			</ol>
+			<p><strong>Note: The class setting is hidden by default. I recommend going into the settings and unchecking "Hide advanced menu options by default".</strong></p>
 			<strong>Colors</strong>
 
 			<ul>
