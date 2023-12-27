@@ -15,10 +15,11 @@ defined( 'ABSPATH' ) || exit;
  * @return void
  */
 function add_styles_to_head() {
-	$header_bg     = \get_field( 'field_65777cacc2143', 'options' );
-	$header_text   = \get_field( 'field_65777ce3c2144', 'options' );
-	$a_header_bg   = \get_field( 'field_65777cf5c2145', 'options' );
-	$a_header_text = \get_field( 'field_65777d0cc2146', 'options' );
+
+	$header_bg     = \get_field( 'admin_menu_colors_header_background_color', 'options' );
+	$header_text   = \get_field( 'admin_menu_colors_header_text_color', 'options' );
+	$a_header_bg   = \get_field( 'admin_menu_colors_active_header_background_color', 'options' );
+	$a_header_text = \get_field( 'admin_menu_colors_active_header_text_color', 'options' );
 
 	$style = <<<EOS
 	<style>
