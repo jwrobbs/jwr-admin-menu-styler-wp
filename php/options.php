@@ -49,10 +49,10 @@ add_action(
 		<ol>
 			<li>Pick a short CSS class name. (If you don't know CSS rules for this, pick 1 word and make it lowercase.)<br>
 			Example: content</li>
-			<li>For the header, append "-section-header" to the end.<br />
-			Example: content-section-header</li>
-			<li>For the items, append "-section-item" to the end.<br />
-			Example: content-section-item</li>
+			<li>For the header, append "-menu-section-header" to the end.<br />
+			Example: content-menu-section-header</li>
+			<li>For the items, append "-menu-section-item" to the end.<br />
+			Example: content-menu-section-item</li>
 			<li>Repeat the process for each collapsable group you want.</li>
 		</ol>
 		
@@ -61,7 +61,7 @@ add_action(
 			<li>Create a new menu item.</li>
 			<li>Set the target page to "none".</li>
 			<li>Set the class name.<br />
-			The class field is in the advanced options. They're hidden by default. I recommend going into the AME settings and unchecking “Hide advanced menu options by default”.</li>
+			The class field is in the advanced options. They're hidden by default. I recommend going into the screen settings and unchecking “Hide advanced menu options by default”.</li>
 			<li>Repeat for each section.</li>
 			<li>Click "save changes" when you're done.</li>
 		</ol>
@@ -99,7 +99,7 @@ add_action(
 					array(
 						'key'               => 'field_65777de4820f0',
 						'label'             => 'Colors',
-						'name'              => 'colors',
+						'name'              => 'admin_menu_colors',
 						'aria-label'        => '',
 						'type'              => 'group',
 						'instructions'      => '',
