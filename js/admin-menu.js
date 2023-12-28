@@ -1,6 +1,6 @@
 (function ($) {
 	// Toggle function.
-	$("[class*='-section-header']").on("click", function () {
+	$("[class*='-menu-section-header']").on("click", function () {
 		let text = this.className;
 		let stem = /\s([^\s]+)-section-header/.exec(text);
 		// console.log(stem[1]);
