@@ -16,10 +16,17 @@ defined( 'ABSPATH' ) || exit;
  */
 function add_styles_to_head() {
 
-	$header_bg     = \get_field( 'admin_menu_colors_header_background_color', 'options' );
-	$header_text   = \get_field( 'admin_menu_colors_header_text_color', 'options' );
-	$a_header_bg   = \get_field( 'admin_menu_colors_active_header_background_color', 'options' );
-	$a_header_text = \get_field( 'admin_menu_colors_active_header_text_color', 'options' );
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		$header_bg     = \get_field( 'admin_menu_colors_header_background_color', 'options' );
+		$header_text   = \get_field( 'admin_menu_colors_header_text_color', 'options' );
+		$a_header_bg   = \get_field( 'admin_menu_colors_active_header_background_color', 'options' );
+		$a_header_text = \get_field( 'admin_menu_colors_active_header_text_color', 'options' );
+	} else {
+		$header_bg     = '#002244';
+		$header_text   = '#ffffff';
+		$a_header_bg   = '#820000';
+		$a_header_text = '#ffffff';
+	}
 
 	$style = <<<EOS
 	<style>
