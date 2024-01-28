@@ -28,7 +28,6 @@ function create_options_page() {
 			)
 		);
 	}
-
 }
 
 add_action( 'acf/init', __NAMESPACE__ . '\create_options_page' );
@@ -36,7 +35,7 @@ add_action( 'acf/init', __NAMESPACE__ . '\create_options_page' );
 // Add field group.
 add_action(
 	'acf/include_fields',
-	function() {
+	function () {
 		if ( ! function_exists( 'acf_add_local_field_group' ) ) {
 			return;
 		}
