@@ -15,6 +15,9 @@ defined( 'ABSPATH' ) || exit;
  * @return void
  */
 function add_styles_to_head() {
+	// [] Improve guard.
+	// Handle ACF not being installed.
+	// Doesn't handle no values.
 
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
 		$header_bg     = \get_field( 'admin_menu_colors_header_background_color', 'options' );
