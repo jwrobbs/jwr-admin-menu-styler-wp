@@ -9,6 +9,8 @@
 
 namespace JWR\Admin_Menu_Styler\PHP;
 
+use JWR\JWR_Control_Panel\PHP\JWR_Plugin_Options;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -36,5 +38,7 @@ function activate() {
 		\deactivate_plugins( 'jwr-admin-menu-styler/index.php' );
 		exit;
 	}
+
+	JWR_Plugin_Options::update_local_json();
 }
 add_action( 'activate_plugin', __NAMESPACE__ . '\activate' );
