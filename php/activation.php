@@ -38,5 +38,3 @@ function activate() {
 	}
 }
 add_action( 'activate_plugin', __NAMESPACE__ . '\activate' );
-
-
