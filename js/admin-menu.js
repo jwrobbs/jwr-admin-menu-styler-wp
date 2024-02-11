@@ -3,7 +3,6 @@
 	$("[class*='-menu-section-header']").on("click", function () {
 		let text = this.className;
 		let stem = /\s([^\s]+)-section-header/.exec(text);
-		// console.log(stem[1]);
 
 		if (stem[1]) {
 			let target = $("li." + stem[1] + "-section-item");
@@ -12,11 +11,17 @@
 	});
 
 	// "Open" section if item is active.
-	var classList = $("li.wp-menu-open").attr("class").split(/\s+/);
-	for (var i = 0; i < classList.length; i++) {
-		// console.log(classList[i]);
+	let classes1 = $("li.wp-menu-open").attr("class");
+	let classes2 = $("li.current").attr("class");
+
+	let classes = classes1 + " " + classes2;
+
+	let classList = classes.split(" ");
+	classlist = [new Set(classList)]; // Remove duplicates.
+
+	let len = classList.length;
+	for (let i = 0; i < len; i++) {
 		if (classList[i].includes("-menu-section-item")) {
-			// console.log(classList[i] + " match");
 			target = $("li." + classList[i]);
 			$(target).toggle();
 		}
