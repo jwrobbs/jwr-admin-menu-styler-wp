@@ -16,6 +16,8 @@ namespace JWR\Admin_Menu_Styler;
 
 defined( 'ABSPATH' ) || exit;
 
+define( 'AMS_PATH', plugin_dir_path( __FILE__ ) );
+
 require_once 'php/activation.php';
 require_once 'php/options.php';
 require_once 'php/menu-styles.php';
