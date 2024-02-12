@@ -17,7 +17,7 @@
 	let classes = classes1 + " " + classes2;
 
 	let classList = classes.split(" ");
-	classlist = [new Set(classList)]; // Remove duplicates.
+	classList = [...new Set(classList)]; // Remove duplicates.
 
 	let len = classList.length;
 	for (let i = 0; i < len; i++) {
