@@ -5,7 +5,7 @@
  * Description: A plugin to style the admin menu. <strong>Requires Admin Menu Editory and ACF PRO.</strong>
  * Author: Josh Robbs
  * Author URI: https://joshrobbs.com
- * Version 1.1.0
+ * Version: 1.1.0
  *
  * @since 20231211
  * @author Josh Robbs <josh@joshrobbs.com>
